@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { Card } from "@mui/material";
-import CardContent from '@material-ui/core/CardContent'
+import { CardContent } from '@mui/material'
 import { MenuItem } from "@mui/material";
 import { Select } from "@mui/material";
 import { Skeleton } from "@mui/material";

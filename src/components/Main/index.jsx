@@ -5,24 +5,38 @@ import { Panel } from '../Panel'
 // import { COUNTRIES as data } from '../../data/countries'
 
 export const Main = () => {
-  const [country, setCountry] = useState('Brazil')
+  const [country, setCountry] = useState('italy')
   const [data, setData] = useState({})
   const path = `https://coronavirus-19-api.herokuapp.com/countries/${country}`
+  const updateAt = new Date().toLocaleString()
 
-  useEffect(() => {
+  const getCovidData = () => {
     fetch(path)
       .then(res => res.json())
       .then(data => setData(data))
+  }
+
+  useEffect(() => {
+    getCovidData()
   }, [country])
   //data: cases, deaths, recovered, todayCases, todayDeaths
+
+  const handleChange = ({ target }) => {
+    const country = target.value
+    setCountry(country)
+  }
 
   return (
     <C.Container>
       <C.Main>
-
-        {/* <Panel /> */}
+        <Panel
+          data={data}
+          updateAt={updateAt}
+          onChange={handleChange}
+          country={country}
+          getCovidData={getCovidData}
+        />
         <Board data={data} />
-
       </C.Main>
     </C.Container>
   )

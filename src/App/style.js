@@ -6,6 +6,13 @@ export const globalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: none;
-    cursor: pointer;
+  }
+
+  .mb-2 {
+  margin-bottom: 32px;
+  }
+  
+  .pt-2 {
+    padding-top: 16px;
   }
 `

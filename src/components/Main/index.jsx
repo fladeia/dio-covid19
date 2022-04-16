@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import FullWidthGrid from '../Grid.jsx'
 import * as C from './style.js'
+import { Board } from '../Board'
+import { Panel } from '../Panel'
 
 export const Main = () => {
   const [country, setCountry] = useState('Brazil')
@@ -17,7 +18,10 @@ export const Main = () => {
   return (
     <C.Container>
       <C.Main>
-        <FullWidthGrid></FullWidthGrid>
+
+        {/* <Panel />
+        <Board /> */}
+
       </C.Main>
     </C.Container>
   )

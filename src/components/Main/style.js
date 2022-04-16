@@ -3,7 +3,8 @@ import covidBg from '../../assets/images/covid.jpg'
 
 export const Container = styledComponents.div`
   display: flex;
-  background-image: url(${covidBg});
+  background: url(${covidBg}) no-repeat;
+  background-size: cover;
 `
 
 export const Main = styledComponents.main`

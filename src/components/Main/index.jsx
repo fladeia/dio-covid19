@@ -1,22 +1,16 @@
 import { useEffect, useState } from 'react'
 import * as C from './style.js'
+import { getCovidData } from '../../api'
 import { Board } from '../Board'
 import { Panel } from '../Panel'
 
 export const Main = () => {
   const [country, setCountry] = useState('brazil')
   const [data, setData] = useState({})
-  const path = `https://coronavirus-19-api.herokuapp.com/countries/${country}`
   const updateAt = new Date().toLocaleString()
 
-  const getCovidData = () => {
-    fetch(path)
-      .then(res => res.json())
-      .then(data => setData(data)) //data: cases, deaths, recovered, todayCases, todayDeaths
-  }
-
   useEffect(() => {
-    getCovidData()
+    getCovidData(country, setData)
   }, [country])
 
 

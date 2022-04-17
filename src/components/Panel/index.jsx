@@ -1,11 +1,10 @@
 import * as C from './style'
-// import RefleshIcon from '../../assets/images/refresh.svg'
 import { Card, Typography, Button, Select, MenuItem } from '../parts'
 import { COUNTRIES } from '../../data/countries'
 
 const navigatorHasShare = navigator.share
 
-export const Panel = ({ updateAt, onChange, data, country, getCoviddata }) => {
+export const Panel = ({ updateAt, onChange, data, country }) => {
   const { recovered } = data
 
   const renderCountries = (country, index) => (
@@ -27,7 +26,7 @@ export const Panel = ({ updateAt, onChange, data, country, getCoviddata }) => {
     navigator.share({
       title: `Dados do Covid19 - ${country}`,
       text: textCovid19,
-      url: 'https://covid19dio.netlify.app/'
+      url: 'https://startling-nougat-471759.netlify.app/'
     })
   }
 
@@ -60,7 +59,9 @@ export const Panel = ({ updateAt, onChange, data, country, getCoviddata }) => {
             </Select>
           </div>
         </div>
-        {navigatorHasShare ? renderShareButton : renderCopyButton}
+        <div className='share-btn'>
+          {navigatorHasShare ? renderShareButton : renderCopyButton}
+        </div>
       </C.CardPanelContentStyled>
     </Card>
   )

@@ -9,6 +9,10 @@ export const LabelStyled = styled(Typography)`
 export const ValueStyled = styled(Typography)`
   font-weight: 400;
   font-size: 2.5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
 `
 
 export const CardContentStyled = styled(CardContent)`

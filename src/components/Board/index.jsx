@@ -1,15 +1,12 @@
 import * as C from './style'
-import { Grid, Skeleton } from '../parts'
+import { Grid } from '../parts'
 import { Card } from '../Card'
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 export const Board = ({ data }) => {
   const { cases, deaths, recovered, todayCases, todayDeaths } = data
 
-  const getValue = (value) => value ? value : <Skeleton variant="text" width={182} height={60} />
-  console.log(getValue(cases))
+  const getValue = (value) => value ? value : <C.StyledSkeleton variant="text" />
 
   return (
     <Box sx={{ flexGrow: 1 }}>
